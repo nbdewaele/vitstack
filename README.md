@@ -1,11 +1,16 @@
 # README
+# This is a purposefully vague README that will be changed to a private repo.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I wish not to disclose details.
+If you have questions -  message me
+
+rails 5.1.4
+
+
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.4.1
 
 * System dependencies
 
