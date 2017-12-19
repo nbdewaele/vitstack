@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* mixins, variables, etc. */
+
 $sonic-silver: #7A7978;
 $pewter-blue: #93B7BE;
 $onyx: #36393B;
@@ -51,7 +53,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: $sonic-silver;
 }
 
 p {
@@ -82,7 +84,7 @@ p {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #777;
+  color: $sonic-silver;
   a {
   	color: #555;
 		&:hover {
