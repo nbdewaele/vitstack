@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
 	get '/login', to: 'static_pages#login'
 
+	get '/signup', to: 'users#new'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
