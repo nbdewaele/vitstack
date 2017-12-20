@@ -3,7 +3,7 @@ require 'test_helper'
 class ApplicationHelperTest < ActionView::TestCase
   test "full title helper" do
 
-		#This commented test may be needed later
+		# This commented test may be needed later
     # assert_equal full_title,         FILL_IN
 
 
