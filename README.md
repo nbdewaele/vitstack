@@ -1,6 +1,11 @@
 # README
 # This is a purposefully vague README that will be changed to a private repo.
 
+
+TODO:
+SSL certificate for your domain - for now piggy back on heroku's
+
+##############################
 I wish not to disclose details.
 If you have questions -  message me
 
