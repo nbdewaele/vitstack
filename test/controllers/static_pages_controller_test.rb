@@ -31,9 +31,9 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Contact | BRBBaby"
   end
 
-	test "should get login" do
-    get login_path
-    assert_response :success
-		assert_select "title", "BRBBaby"
-  end
+	# test "should get login" do
+  #   get login_path
+  #   assert_response :success
+	# 	assert_select "title", "BRBBaby"
+  # end
 end
