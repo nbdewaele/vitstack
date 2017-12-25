@@ -31,6 +31,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Contact | BRBBaby"
   end
 
+	# MAY NEED TO REMOVE OLD LOGINS FROM STATIC PAGES CONTROLLER< ROUTES AND VIEWS
 	# test "should get login" do
   #   get login_path
   #   assert_response :success
