@@ -6,6 +6,15 @@ https://github.com/mhartl/sample_app_3rd_edition
 
 IMPORTANT - 1st user must be deleted - they have admin privs
 
+To populate production database:
+$ rails test
+$ git push heroku
+$ heroku pg:reset DATABASE
+$ heroku run rails db:migrate
+$ heroku run rails db:seed
+$ heroku restart
+
+
 
 TODO:
 SSL certificate for your domain - for now piggy back on heroku's
