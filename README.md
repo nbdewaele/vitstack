@@ -1,6 +1,11 @@
 # README
 # This is a purposefully vague README that will be changed to a private repo.
 
+Guided by:
+https://github.com/mhartl/sample_app_3rd_edition
+
+IMPORTANT - 1st user must be deleted - they have admin privs
+
 
 TODO:
 SSL certificate for your domain - for now piggy back on heroku's
