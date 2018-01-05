@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 	def create
     @user = User.new(user_params)
     if @user.save
-			log_in @user
 			flash[:success] = "Welcome to BRBBaby!"
 			redirect_to root_url
     else
@@ -54,7 +53,7 @@ class UsersController < ApplicationController
     end
 
     # Before filters
-		
+
 		# Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])

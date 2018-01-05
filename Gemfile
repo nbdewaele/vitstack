@@ -12,6 +12,8 @@ gem 'rails', '~> 5.1.4'
 # Adds fake users - Delete for Vits application
 gem 'faker', '1.8.7'
 
+
+
 # Pagination added for users but useful for othe applications
 gem 'will_paginate', '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'

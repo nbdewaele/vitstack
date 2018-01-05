@@ -17,10 +17,23 @@ module SessionsHelper
     user == current_user
   end
 
+	# Returns the current logged-in user (if any).
+  def current_user
+    if (user_id = session[:user_id])
+      @current_user ||= User.find_by(id: user_id)
+    elsif (user_id = cookies.signed[:user_id])
+      user = User.find_by(id: user_id)
+      if user && user.authenticated?(:remember, cookies[:remember_token])
+        log_in user
+        @current_user = user
+      end
+    end
+  end
+
 	# Returns true if the user is logged in, false otherwise.
 	# FIXES - this was !current_user.nil? and had lots of errors and was fixed with below, but not sure right now how it might affect other parts of app.
   def logged_in?
-    @current_user
+    !current_user.nil?
   end
 
 	# Forgets a persistent session.
