@@ -1,8 +1,7 @@
 class User < ApplicationRecord
 	attr_accessor :remember_token, :activation_token
-
   before_save   :downcase_email
-	before_create :create_activation_digest
+  before_create :create_activation_digest
 
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,}/i
@@ -49,14 +48,14 @@ class User < ApplicationRecord
 
 	  private
 
-	    # Converts email to all lower-case.
-	    def downcase_email
-	      self.email = email.downcase
-	    end
+		# Converts email to all lower-case.
+	def downcase_email
+		self.email = email.downcase
+	end
 
-	    # Creates and assigns the activation token and digest.
-	    def create_activation_digest
-	      self.activation_token  = User.new_token
-	      self.activation_digest = User.digest(activation_token)
-	    end
+	# Creates and assigns the activation token and digest.
+	def create_activation_digest
+		self.activation_token  = User.new_token
+		self.activation_digest = User.digest(activation_token)
+	end
 end
