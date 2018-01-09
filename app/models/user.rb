@@ -56,8 +56,7 @@ class User < ApplicationRecord
 	# Sets the password reset attributes.
   def create_reset_digest
     self.reset_token = User.new_token
-    update_attribute(:reset_digest,  User.digest(reset_token))
-    update_attribute(:reset_sent_at, Time.zone.now)
+		update_columns(reset_digest:  User.digest(reset_token), reset_sent_at: Time.zone.now)
   end
 
   # Sends password reset email.
@@ -65,16 +64,21 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
 
-	  private
+	# Returns true if a password reset has expired.
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
+	private
 
 		# Converts email to all lower-case.
-	def downcase_email
-		self.email = email.downcase
-	end
+		def downcase_email
+			self.email = email.downcase
+		end
 
-	# Creates and assigns the activation token and digest.
-	def create_activation_digest
-		self.activation_token  = User.new_token
-		self.activation_digest = User.digest(activation_token)
-	end
+		# Creates and assigns the activation token and digest.
+		def create_activation_digest
+			self.activation_token  = User.new_token
+			self.activation_digest = User.digest(activation_token)
+		end
 end
