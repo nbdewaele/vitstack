@@ -8,7 +8,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
 	test "should redirect index when not logged in" do
-    get :index
     assert_redirected_to login_url
   end
 
@@ -33,7 +32,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 	test "should not allow the admin attribute to be edited via the web" do
     log_in_as(@other_user)
     assert_not @other_user.admin?
-    patch :update, id: @other_user, user: { password:              @other_user.password,
+    patch user_path(@other_user), user: { password:              @other_user.password,
                                             password_confirmation: @other_user.password_confirmation,
                                             admin: true }
     assert_not @other_user.reload.admin?
@@ -42,7 +41,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
 	test "should redirect update when logged in as wrong user" do
     log_in_as(@other_user)
-    patch :update, user_path(@user), user: { name: @user.name, email: @user.email }
+    # patch :update, user_path(@user), user: { name: @user.name, email: @user.email }
+		patch user_path(@user), user: { name: @user.name, email: @user.email }
     assert flash.empty?
     assert_redirected_to root_url
   end

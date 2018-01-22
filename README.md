@@ -78,3 +78,10 @@ Ingredients belongs_to FormulaProfile
 	constituent must be used - others are optional
 
 	for amount and amount units, find examples of calculators and write them in
+
+
+Thanks Izzy:
+rails new -m /Desktop/path/newapp
+IzzyApp.rb
+
+database is sqlite3 as indicated in config/database.yml
