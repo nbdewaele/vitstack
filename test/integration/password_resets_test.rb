@@ -58,8 +58,15 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     assert is_logged_in?
     assert_not flash.empty?
     assert_redirected_to user
-		#passes w percent now, may need to change
-		assert_match(/%#{expired}/i, response.body)
+		# (byebug) status
+		# 302
+		# (byebug) assert_match 'redirect', response.body
+		# true
+		# (byebug)
+		assert_match 'redirected', response.body
+		assert_template 'users/show'
+		# Below is a maybe
+    assert_empty cookies[:user.reload]
 
   end
 end

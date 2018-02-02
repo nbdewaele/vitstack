@@ -1,5 +1,5 @@
 # README
-# This is a purposefully vague README that will be changed to a private repo.
+Watch this app progress at (https://mighty-beyond-43620.herokuapp.com/)
 
 Guided by:
 https://github.com/mhartl/sample_app_3rd_edition
