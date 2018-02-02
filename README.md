@@ -36,7 +36,7 @@ rails 5.1.4
 
 Things you may want to cover:
 
-* Ruby version 2.4.1
+* Ruby version 2.5.0
 
 * System dependencies
 
