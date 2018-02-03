@@ -4,9 +4,9 @@ class UsersController < ApplicationController
 	before_action :admin_user,     only: :destroy
 
 	# Shows all users, delete for sups app but useful for BRBBaby
-	def index
-		@users = User.where(activated: true).paginate(page: params[:page])
-  end
+	# def index
+	# 	@users = User.where(activated: true).paginate(page: params[:page])
+  # end
 
 	def show
 		@user = User.find(params[:id])
