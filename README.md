@@ -1,6 +1,7 @@
 # README
 Watch this app progress at (https://mighty-beyond-43620.herokuapp.com/)
 
+app/views/layouts/application.html.erb shows debug info but not in deployment
 Guided by:
 https://github.com/mhartl/sample_app_3rd_edition
 
@@ -85,3 +86,41 @@ rails new -m /Desktop/path/newapp
 IzzyApp.rb
 
 database is sqlite3 as indicated in config/database.yml
+
+Notes on Environment:
+Rails comes equipped with three environments: test, development, and production. The default environment for the Rails console is development:
+
+  $ rails console
+  Loading development environment
+  >> Rails.env
+  => "development"
+  >> Rails.env.development?
+  => true
+  >> Rails.env.test?
+  => false
+As you can see, Rails provides a Rails object with an env attribute and associated environment boolean methods, so that, for example, Rails.env.test? returns true in a test environment and false otherwise.
+
+If you ever need to run a console in a different environment (to debug a test, for example), you can pass the environment as a parameter to the console script:
+
+  $ rails console test
+  Loading test environment
+  >> Rails.env
+  => "test"
+  >> Rails.env.test?
+  => true
+As with the console, development is the default environment for the Rails server, but you can also run it in a different environment:
+
+  $ rails server --environment production
+If you view your app running in production, it won’t work without a production database, which we can create by running rails db:migrate in production:
+
+  $ rails db:migrate RAILS_ENV=production
+(I find it confusing that the idiomatic commands to run the console, server, and migrate commands in non-default environments use different syntax, which is why I bothered showing all three. It’s worth noting, though, that preceding any of them with RAILS_ENV=<env> will also work, as in RAILS_ENV=production rails server).
+
+By the way, if you have deployed your sample app to Heroku, you can see its environment using heroku run rails console:
+
+  $ heroku run rails console
+  >> Rails.env
+  => "production"
+  >> Rails.env.production?
+  => true
+Naturally, since Heroku is a platform for production sites, it runs each application in a production environment.
