@@ -2,7 +2,7 @@
 
 michael:
   name: Nate
-  email: nate@gmail.com
+  email: nbdewaele@gmail.com
   password_digest: <%= User.digest('password') %>
   admin: true
   activated: true
