@@ -5,13 +5,13 @@ class UsersController < ApplicationController
 
 	# Shows all users, delete for sups app but useful for BRBBaby
 	def index
-    @users = User.paginate(page: params[:page])
+    @users = User.where(activated: FILL_IN).paginate(page: params[:page])
   end
 
-	def show
-		@user = User.find(params[:id])
-		redirect_to root_url and return unless :active
-	end
+  def show
+    @user = User.find(params[:id])
+    redirect_to root_url and return unless FILL_IN
+  end
 
 	def new
 		@user = User.new
@@ -20,9 +20,9 @@ class UsersController < ApplicationController
 	def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
       render 'new'
     end

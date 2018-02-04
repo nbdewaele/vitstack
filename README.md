@@ -13,6 +13,8 @@ $ git push heroku
 $ heroku pg:reset DATABASE
 $ heroku run rails db:migrate
 $ heroku run rails db:seed
+$ heroku restart
+
 $  
 
 
@@ -25,6 +27,8 @@ TODO:
 - SSL certificate for your domain - for now piggy back on heroku's
 - Add twitter API so they can tweet and let people know they saved
 - Add other APIs to make it easier to share
+- Convert "unactivated" and "activated" user to enjoy base app features without having to sign up.
+- Channge host to Cloud IDE in config/environments/development.rb - it will look like: host = 'vitstack-app.c9users.io' then change to https
 
 
 ##############################
@@ -124,3 +128,7 @@ By the way, if you have deployed your sample app to Heroku, you can see its envi
   >> Rails.env.production?
   => true
 Naturally, since Heroku is a platform for production sites, it runs each application in a production environment.
+
+To get sendgrid username and password:
+$ heroku config:get SENDGRID_USERNAME
+$ heroku config:get SENDGRID_PASSWORD
