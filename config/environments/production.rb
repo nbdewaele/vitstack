@@ -18,7 +18,7 @@ Rails.application.configure do
 	# Change when brbbaby.com is used - maybe
 	config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'sheltered-reef-46842.herokuapp.com'
+  host = 'infinite-mountain-69399.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
