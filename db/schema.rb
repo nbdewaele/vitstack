@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107215912) do
+ActiveRecord::Schema.define(version: 20180204200629) do
+
+  create_table "formula_profiles", force: :cascade do |t|
+    t.string "formula_name"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_formula_profiles_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_formula_profiles_on_user_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "ingredient_name"
+    t.string "quality"
+    t.integer "dosage"
+    t.string "dosage_units"
+    t.string "dosage_absolute"
+    t.integer "formula_profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["formula_profile_id"], name: "index_ingredients_on_formula_profile_id"
+    t.index [nil, "created_at"], name: "index_ingredients_on_formula_profiles_and_created_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

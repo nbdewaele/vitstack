@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ingredient_name: MyString
+  quality: MyString
+  dosage: 1
+  dosage_units: MyString
+  dosage_absolute: MyString
+  formula_profile: one
+
+two:
+  ingredient_name: MyString
+  quality: MyString
+  dosage: 1
+  dosage_units: MyString
+  dosage_absolute: MyString
+  formula_profile: two
