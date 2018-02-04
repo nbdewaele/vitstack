@@ -1,5 +1,29 @@
 Rails.application.routes.draw do
 
+  get 'ingredients/index'
+
+  get 'ingredients/create'
+
+  get 'ingredients/update'
+
+  get 'ingredients/edit'
+
+  get 'ingredients/destroy'
+
+  get 'ingredients/show'
+
+  get 'product_formulas/index'
+
+  get 'product_formulas/create'
+
+  get 'product_formulas/update'
+
+  get 'product_formulas/edit'
+
+  get 'product_formulas/destroy'
+
+  get 'product_formulas/show'
+
 	root   'static_pages#home'
   get    '/help',    to: 'static_pages#help'
   get    '/about',   to: 'static_pages#about'
@@ -11,5 +35,8 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
 	resources :password_resets,     only: [:new, :create, :edit, :update]
+	resources :formula_profiles, only: [:new, :create, :edit, :update, :index]
+	resources :ingredients, only: [:new, :create, :edit, :update, :index]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
