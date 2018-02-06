@@ -132,3 +132,7 @@ Naturally, since Heroku is a platform for production sites, it runs each applica
 To get sendgrid username and password:
 $ heroku config:get SENDGRID_USERNAME
 $ heroku config:get SENDGRID_PASSWORD
+
+
+ruby 2.5.0 notes
+If you're using `rbenv`, you'll need to `rbenv rehash` after installing certain gems with executables. If you're using `rvm`, then you need to restart Terminal to run the setup script inside `.bash_profile` or `.profile`. If you get permission errors, it's because rvm/rbenv aren't setup correctly and you're trying to install into the OSX system Ruby. (edited)
