@@ -1,18 +1,66 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Concert+One');
+
+// font-family: 'Comfortaa', cursive;
+// font-family: 'Concert One', cursive;
 
 /* mixins, variables, etc. */
 
-$sonic-silver: #7A7978;
-$pewter-blue: #93B7BE;
-$onyx: #36393B;
-$aero-blue: #C7EDE4;
-$white: #FFFFFF;
+$persian-orange: #DB9D47;
+$coral: #FF784F;
+$onyx: #3A3042;
+$navajo-white: #FFE19C;
+$nyanza-white: #EDFFD9;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+}
+
+/* HOME */
+
+.home-header {
+	font-family: 'Concert One', cursive;
+	color: $persian-orange;
+}
+
+.head-links {
+	color: $coral;
+}
+
+.home-text {
+	font-family: 'Comfortaa', cursive;
+	text-align: center;
+	color: $onyx;
+}
+
+.form-formula-name {
+	font-family: sans-serif;
+	text-align: left;
+	color: $onyx;
+	font-family: 'Comfortaa', cursive;
+}
+
+.new-formula-button {
+  border: none;
+  background-color: $persian-orange;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+	width: 200px;
+	float: right;
+}
+
+.jumbotron {
+	background-color: $nyanza-white;
+	border-style: solid;
+	border-color: $persian-orange;
+}
+
+.form-control {
+	font-family: 'Comfortaa', cursive;
 }
 
 /* miscellaneous */
@@ -31,6 +79,7 @@ $white: #FFFFFF;
 
 body {
   padding-top: 60px;
+	background-color: $nyanza-white;
 }
 
 section {
@@ -42,9 +91,9 @@ textarea {
 }
 
 .center {
-  text-align: center;
 	h1 {
 	  margin-bottom: 10px;
+		color: $persian-orange;
 	}
 }
 
@@ -69,12 +118,11 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $sonic-silver;
+  color: #EDFFD9;
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+
 }
 
 /* header */
@@ -83,26 +131,32 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #f8345a;
+  color: $coral;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+	font-family: 'Comfortaa', cursive;
 	&:hover {
   	color: #fff;
   	text-decoration: none;
 	}
 }
 
+.navbar.navbar-static-top.custom-nav {
+	background-color: $nyanza-white;
+}
+
+
 /* footer */
 
 .footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: $sonic-silver;
+  border-top: 1px solid $persian-orange;
+  color: $persian-orange;
   a {
-  	color: #555;
+  	color: $coral;
 		&:hover {
   		color: #222;
 		}
@@ -212,6 +266,6 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid $persian-orange;
   }
 }

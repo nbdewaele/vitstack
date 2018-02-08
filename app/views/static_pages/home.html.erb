@@ -6,7 +6,7 @@
 	<p class="home-text">
 		If you take one or more supplements or vitamins, try this app out.  Why not?  It's free and you can save money, swallow less pills, spend less time shopping for supplements, and cut down on packaging waste.</p>
 		<br><br>
-	<p>Simply enter all the supplements you take, hit enter and Vitstack will find formulas that contain a combination of those ingredients.  Let's get started.
+	<p class="home-text">Let's get started.
 	</p>
 	<div class="container">
 		<div class="row">
@@ -14,10 +14,10 @@
 		    <%= form_for(@formula_profile) do |f| %>
 		      <%#= render 'shared/error_messages' %>
 
-					<%= f.label :formula_name, "Formula Name" %>
-		      <%= f.text_field :formula_name, class: 'form-control' %>
+					<%= f.label :formula_name, "Formula Name", class: 'form-formula-name' %>
+		      <%= f.text_field :formula_name, class: 'form-control', placeholder: "e.g. Morning Wellness formula or Jill's Pre-workout" %>
 
-		      <%= f.submit "Build your formula", class: "btn btn-primary" %>
+		      <%= f.submit "Build your formula", class: "btn btn-primary new-formula-button" %>
 		    <% end %>
 		  </div>
 		</div>
