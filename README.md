@@ -1,7 +1,7 @@
 # README
 Watch this app progress at (https://mighty-beyond-43620.herokuapp.com/)
 
-![Front page of VitStack](vitstack_sc.png)
+![Front page of VitStack](/app/assets/images/vitstack_sc.png)
 
 app/views/layouts/application.html.erb shows debug info but not in deployment
 Guided by:
