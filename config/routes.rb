@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+	root   'static_pages#home'
+
   # get 'ingredients/index'
   #
   # get 'ingredients/create'
@@ -11,20 +13,19 @@ Rails.application.routes.draw do
   # get 'ingredients/destroy'
   #
   # get 'ingredients/show'
-  #
-  # get 'product_formulas/index'
-  #
-  # get 'product_formulas/create'
-  #
-  # get 'product_formulas/update'
-  #
-  # get 'product_formulas/edit'
-  #
-  # get 'product_formulas/destroy'
-  #
-  # get 'product_formulas/show'
 
-	root   'static_pages#home'
+  get 'product_formulas/index'
+
+  get 'product_formulas/create'
+
+  get 'product_formulas/update'
+
+  get 'product_formulas/edit'
+
+  get 'product_formulas/destroy'
+
+  get 'product_formulas/show'
+
   get    '/help',    to: 'static_pages#help'
   get    '/about',   to: 'static_pages#about'
   get    '/contact', to: 'static_pages#contact'

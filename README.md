@@ -15,14 +15,10 @@ $ heroku run rails db:migrate
 $ heroku run rails db:seed
 $ heroku restart
 
-$  
-
-
-
 TODO:
-- Fix errors
 - Apply sessions so that a guest can use app immediately
-- find supplement provider that meets API params needs and monetizatoin wants
+	- States: so that app FormulaProfiles not orphaned when created without registered user
+- find supplement provider that meets API params needs and monetization wants
 - Add OAuth so that it easier for them to share my site on social media
 - SSL certificate for your domain - for now piggy back on heroku's
 - Add twitter API so they can tweet and let people know they saved
