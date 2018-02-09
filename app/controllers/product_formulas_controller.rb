@@ -3,8 +3,8 @@ class ProductFormulasController < ApplicationController
   end
 
   def create
-		@product_formula = ProductFormula.new(product_formula_params)
-    if @product_formula.save
+		@formula_profile = FormulaProfile.new(formula_profile_params)
+    if @formula_profile.save
       flash[:info] = "Awesome-sauce, let's add ingredients to your profile"
 			# do I redirect to ingredients or formula profile to add ingredients
       # redirect_to root_url
@@ -31,7 +31,7 @@ class ProductFormulasController < ApplicationController
 
 	private
 
-    def product_formula_params
-      params.require(:product_formula).permit(:product_formula_name)
+    def formula_profile_params
+      params.require(:formula_profile).permit(:formula_name)
     end
 end
