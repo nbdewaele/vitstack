@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-		  @formula_profile = FormulaProfile.new
   end
 
   def help
