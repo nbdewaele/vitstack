@@ -3,6 +3,7 @@ Watch this app progress at (https://mighty-beyond-43620.herokuapp.com/)
 
 ![Front page of VitStack](/app/assets/images/vitstack_sc.png)
 
+before adding - run $ `RAILS_ENV=production bundle exec rake assets:precompile`
 app/views/layouts/application.html.erb shows debug info but not in deployment
 Guided by:
 https://github.com/mhartl/sample_app_3rd_edition
