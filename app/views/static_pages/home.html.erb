@@ -12,16 +12,16 @@
 		<div class="row">
 		  <div class="col-md-6 col-md-offset-3">
 				<!-- Temporary solution MUST BE REMOVED!!!!!!! -->
-				<%= form_for(FormulaProfile.new) do |f| %>
+				<%#= form_for(FormulaProfile.new) do |f| %>
 				<!-- THIS IS WHAT IT SHOULD LOOK LIKE -->
 		    <%#= form_for(@formula_profile) do |f| %>
 		      <%#= render 'shared/error_messages' %>
 
-					<%= f.label :formula_name, "Formula Name", class: 'form-formula-name' %>
-		      <%= f.text_field :formula_name, class: 'form-control', placeholder: "e.g. Morning Wellness formula or Jill's Pre-workout" %>
+					<%#= f.label :formula_name, "Formula Name", class: 'form-formula-name' %>
+		      <%#= f.text_field :formula_name, class: 'form-control', placeholder: "e.g. Morning Wellness formula or Jill's Pre-workout" %>
 
-		      <%= f.submit "Build your formula", class: "btn btn-primary new-formula-button" %>
-		    <% end %>
+		      <%#= f.submit "Build your formula", class: "btn btn-primary new-formula-button" %>
+		    <%# end %>
 		  </div>
 		</div>
 </div>
